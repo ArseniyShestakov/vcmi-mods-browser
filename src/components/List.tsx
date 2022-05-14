@@ -1,7 +1,6 @@
 import * as React from "react";
 import ModComponent from "./Mod"
 
-
 interface ModInfo {
   name: string,
   description: string,
