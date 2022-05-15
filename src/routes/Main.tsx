@@ -1,10 +1,15 @@
+import { Center } from '@chakra-ui/react';
+import logo from '../logo.svg';
+import { Heading } from '@chakra-ui/react';
+
 export default function MainRoute() {
     return (
-      <main style={{ padding: "2rem 0" }}>
-        <h2>Index page</h2>
+      <Center bg='blackAlpha.500' >
+        <Heading>Hello world!</Heading>
         <div>
-            <h1>Hello world!</h1>
+            <h1></h1>
+          <img src={logo} className="App-logo" alt="logo" />
         </div>
-      </main>
+      </Center>
     );
   }

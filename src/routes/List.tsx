@@ -1,12 +1,13 @@
+import { VStack, Center, Heading } from '@chakra-ui/react';
 import ListComponent from '../components/List';
 
 export default function ListRoute() {
   return (
-    <main style={{ padding: "2rem 0" }}>
-      <h2>Mods</h2>
-      <div>
-        <ListComponent></ListComponent>
-      </div>
-    </main>
+    <VStack>
+      <Center>
+        <Heading>Available mods</Heading>
+      </Center>
+      <ListComponent></ListComponent>
+    </VStack>
   );
 }

@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import AppContext, { ModInfo } from "../AppContext";
+import { Grid, GridItem } from '@chakra-ui/react';
 
 interface ModComponentProps {
     short: boolean,
@@ -23,21 +23,24 @@ export default class ModComponent extends React.Component <ModComponentProps, an
     if (this.props.short) {
         const mod = this.props;
         return (
-          <li>
-            <Link to={`/mod/${mod.id}`}>
+            <p>
                 {mod.id}: {mod.name} - {mod.version} ({mod.size} kb)
-            </Link>
-          </li>
+            </p>
         );
     } else if (this.context.isLoaded) {
         const mod = this.getModInfo()
         return (
-          <div>
-              <p>id: {this.props.id}:</p>
-              <p>name: {mod.name}</p>
-              <p>version: {mod.version}</p>
-              <p>size: {mod.size} kb</p>
-          </div>
+            <Grid
+                h='200px'
+                templateRows='repeat(2, 1fr)'
+                templateColumns='repeat(5, 1fr)'
+                gap={4}
+            >
+                <GridItem rowSpan={2} colSpan={1} bg='tomato'>id: {this.props.id}</GridItem>
+                <GridItem colSpan={2} bg='papayawhip'>name: {mod.name}</GridItem>
+                <GridItem colSpan={2} bg='papayawhip'>version: {mod.version}</GridItem>
+                <GridItem colSpan={4} bg='tomato'>size: {mod.size} kb</GridItem>
+            </Grid>
         );
     } else {
         return (

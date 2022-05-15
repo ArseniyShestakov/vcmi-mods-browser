@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from '../logo.svg';
 import { Link } from "react-router-dom";
+import {
+    Center,
+    Grid,
+    GridItem,
+    Menu,
+    MenuItem,
+  } from '@chakra-ui/react';
 
 export default class HeaderComponent extends React.Component <{}, {}> {
     render() {
+        // <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
         return (
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <nav
-                    style={{
-                        borderBottom: "solid 1px",
-                        paddingBottom: "1rem",
-                    }}
-                >
-                    <Link to="/">Index</Link> |{" "}
-                    <Link to="/list">Mod list</Link> |{" "}
-                    <Link to="/top">Mods Top</Link> |{" "}
-                    <Link to="/wronglink">Wrong link</Link>
-                </nav>
-            </header>
+            <Center bg='black' h='100px'>
+                <Menu>
+                    <Grid templateColumns='repeat(4, 1fr)' gap={6}>
+                        <GridItem w='100%' h='10' bg='orange.300'>
+                            <MenuItem as={Link} to="/">Index</MenuItem>
+                        </GridItem>
+                        <GridItem w='100%' h='10' bg='orange.300'>
+                            <MenuItem as={Link} to="/list">Mod list</MenuItem>
+                        </GridItem>
+                        <GridItem w='100%' h='10' bg='orange.300'>
+                            <MenuItem as={Link} to="/top">Mods Top</MenuItem>
+                        </GridItem>
+                        <GridItem w='100%' h='10' bg='orange.300'>
+                        <MenuItem as={Link} to="/wronglink">Wrong link</MenuItem>
+                        </GridItem>
+                    </Grid>
+                </Menu>
+            </Center>
       );
     }
   }

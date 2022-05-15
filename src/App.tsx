@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { ChakraProvider, LightMode, GlobalStyle } from '@chakra-ui/react'
+
 import './App.css';
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -43,7 +46,9 @@ export default class App extends React.Component <{}, AppContextState> {
 
     render() {
       return (
-        <div className="App">
+        <ChakraProvider>
+        <LightMode>
+          <GlobalStyle />
           <BrowserRouter>
             <HeaderComponent/>
             <AppContext.Provider value={this.state}>
@@ -57,7 +62,8 @@ export default class App extends React.Component <{}, AppContextState> {
               </Routes>
             </AppContext.Provider>
           </BrowserRouter>
-        </div>
+        </LightMode>
+        </ChakraProvider>
       );
   }
 }
