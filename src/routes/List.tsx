@@ -3,11 +3,13 @@ import ListComponent from '../components/List';
 
 export default function ListRoute() {
   return (
-    <VStack>
-      <Center>
-        <Heading>Available mods</Heading>
-      </Center>
-      <ListComponent></ListComponent>
-    </VStack>
-  );
+    <div data-intercom-target='modlist'>
+      <VStack>
+        <Center>
+          <Heading>Available mods</Heading>
+        </Center>
+        <ListComponent></ListComponent>
+      </VStack>
+    </div>
+  )
 }

@@ -15,7 +15,7 @@ export default class IntercomComponent extends React.Component <{}, any> {
 
   addLog(text: string) {
     const updatedLog = this.state.log;
-    updatedLog.unshift(<Center id="leog">{text}</Center>);
+    updatedLog.unshift(<Center>{text}</Center>);
 
     this.setState({
         log: updatedLog
@@ -98,7 +98,7 @@ export default class IntercomComponent extends React.Component <{}, any> {
   }
 
   startTour() {
-    window.Intercom('startTour', 24921839);
+    window.Intercom('startTour', 342554);
   }
 
   showArticle() {
