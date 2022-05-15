@@ -46,11 +46,17 @@ export default class App extends React.Component <{}, AppContextState> {
     }
 
     render() {
+      var env_basename = '';
+      if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+        env_basename = ''
+      } else {
+        env_basename = '/vcmi-mods-browser/';
+      }
       return (
         <ChakraProvider>
         <LightMode>
           <GlobalStyle />
-          <BrowserRouter>
+          <BrowserRouter basename={env_basename}>
             <HeaderComponent/>
             <AppContext.Provider value={this.state}>
               <Routes>
