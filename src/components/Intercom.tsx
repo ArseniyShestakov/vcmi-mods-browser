@@ -107,6 +107,7 @@ export default class IntercomComponent extends React.Component <{}, any> {
   }
 
   startSurvey() {
+    this.callHide()
     window.Intercom('startSurvey', 24921838);
   }
 
@@ -138,8 +139,12 @@ export default class IntercomComponent extends React.Component <{}, any> {
             <Center>
                 <Button onClick={this.trackEvent}>trackEvent</Button>
                 <Button onClick={this.getVisitorId}>getVisitorId</Button>
+            </Center>
+            <Center>
+                
+                <Button onClick={this.startTour}>startTour</Button>
                 <Button onClick={this.showArticle}>showArticle</Button>
-                <Button onClick={this.startSurvey}>startSurvey</Button>
+                <Button onClick={this.startSurvey.bind(this)}>startSurvey</Button>
             </Center>
             <Center>
                 <Heading size="md">Logs</Heading>
