@@ -1,5 +1,6 @@
 {
   "name": "vcmi-mods-browser",
+  "homepage": "https://arseniyshestakov.github.io/vcmi-mods-browser/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +15,7 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "framer-motion": "^6.3.3",
+    "gh-pages": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
