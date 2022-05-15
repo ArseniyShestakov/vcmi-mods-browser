@@ -22,7 +22,7 @@ export default class HeaderComponent extends React.Component <{}, {}> {
                             <MenuItem as={Link} to="/list">Mod list</MenuItem>
                         </GridItem>
                         <GridItem w='100%' h='10' bg='orange.300'>
-                            <MenuItem as={Link} to="/top">Mods Top</MenuItem>
+                            <MenuItem as={Link} to="/intercom">Intercom test</MenuItem>
                         </GridItem>
                         <GridItem w='100%' h='10' bg='orange.300'>
                         <MenuItem as={Link} to="/wronglink">Wrong link</MenuItem>
