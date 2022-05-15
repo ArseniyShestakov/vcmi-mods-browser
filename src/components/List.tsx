@@ -1,56 +1,16 @@
 import * as React from "react";
+import AppContext, { ModInfo } from "../AppContext";
 import ModComponent from "./Mod"
 
-interface ModInfo {
-  name: string,
-  description: string,
-  version: string,
-  author: string,
-  contact: string,
-  modType: string,
-  download: string,
-  size: number
-}
 
-interface ListComponentState {
-  error: any,
-  isLoaded: boolean,
-  mods: Map<string, ModInfo>
-}
-
-export default class ListComponent extends React.Component <{}, ListComponentState> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      mods: new Map()
-    };
-  }
-
-  componentDidMount() {
-    fetch("/repository.json")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            mods: new Map(Object.entries(result))
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
-  }
-
+export default class ListComponent extends React.Component <{}> {
+  static contextType = AppContext
+  context!: React.ContextType<typeof AppContext>
+  
   getModComponents(): any {
     const comps: any[] = []
-    console.log(this.state.mods)
-    this.state.mods.forEach((modInfo: ModInfo, modId: string) => {
+    console.log(this.context.mods)
+    this.context.mods.forEach((modInfo: ModInfo, modId: string) => {
       comps.push(<ModComponent
         short={true}
         id={modId}
@@ -63,7 +23,7 @@ export default class ListComponent extends React.Component <{}, ListComponentSta
   }
 
   render() {
-    const {isLoaded} = this.state
+    const {isLoaded} = this.context
     if (isLoaded) {
       return (
         <ul>
