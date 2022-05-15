@@ -7,7 +7,6 @@ export default function MainRoute() {
       <Center bg='blackAlpha.500' >
         <Heading>Hello world!</Heading>
         <div>
-            <h1></h1>
           <img src={logo} className="App-logo" alt="logo" />
         </div>
       </Center>

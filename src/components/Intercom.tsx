@@ -1,7 +1,6 @@
 import * as React from "react";
-import AppContext, { ModInfo } from "../AppContext";
-import { VStack, StackDivider, Box, Center, Button, Text, Heading } from '@chakra-ui/react';
-import { Link } from "react-router-dom";
+import AppContext from "../AppContext";
+import { VStack, StackDivider, Center, Button, Heading } from '@chakra-ui/react';
 
 export default class IntercomComponent extends React.Component <{}, any> {
   static contextType = AppContext
