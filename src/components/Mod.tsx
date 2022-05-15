@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 interface ModComponentProps {
     short: boolean,
@@ -10,19 +11,22 @@ interface ModComponentProps {
 
 export default class ModComponent extends React.Component <ModComponentProps, any> {
   render() {
-    if (this.props.short) {
+    const mod = this.props;
+    if (mod.short) {
         return (
           <li>
-              {this.props.id}: {this.props.name} - {this.props.version} ({this.props.size} kb)
+            <Link to={`/mod/${mod.id}`}>
+                {mod.id}: {mod.name} - {mod.version} ({mod.size} kb)
+            </Link>
           </li>
         );
     } else {
         return (
           <div>
-              <p>id: {this.props.id}:</p>
-              <p>name: {this.props.name}</p>
-              <p>version: {this.props.version}</p>
-              <p>size: {this.props.size} kb</p>
+              <p>id: {mod.id}:</p>
+              <p>name: {mod.name}</p>
+              <p>version: {mod.version}</p>
+              <p>size: {mod.size} kb</p>
           </div>
         );
     }
