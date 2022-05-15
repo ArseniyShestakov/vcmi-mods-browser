@@ -1,6 +1,6 @@
 {
   "name": "vcmi-mods-browser",
-  "homepage": "https://arseniyshestakov.github.io/vcmi-mods-browser/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
