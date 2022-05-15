@@ -26,7 +26,7 @@ export default class App extends React.Component <{}, AppContextState> {
   static contextType = AppContext;
 
   componentDidMount() {
-    fetch("/repository.json")
+    fetch("repository.json")
       .then(res => res.json())
       .then(
         (result) => {
