@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import HeaderComponent from "./components/Header"
 import MainRoute from './routes/Main'
-import ModsRoute from "./routes/Mods"
+import ListRoute from "./routes/List"
+import ModRoute from "./routes/Mod"
 
 function App() {
   return (
@@ -14,7 +15,10 @@ function App() {
         <HeaderComponent/>
         <Routes>
           <Route path="/" element={<MainRoute />} />
-          <Route path="list" element={<ModsRoute />} />
+          <Route path="list" element={<ListRoute />} />
+          <Route path="mod">
+            <Route path=":modId" element={<ModRoute />} />
+          </Route>
           <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
       </BrowserRouter>

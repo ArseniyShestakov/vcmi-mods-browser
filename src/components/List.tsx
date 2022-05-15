@@ -52,6 +52,7 @@ export default class ListComponent extends React.Component <{}, ListComponentSta
     console.log(this.state.mods)
     this.state.mods.forEach((modInfo: ModInfo, modId: string) => {
       comps.push(<ModComponent
+        short={true}
         id={modId}
         name={modInfo.name}
         version={modInfo.version}
