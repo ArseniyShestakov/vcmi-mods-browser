@@ -12,6 +12,7 @@ import HeaderComponent from "./components/Header"
 import MainRoute from './routes/Main'
 import ListRoute from "./routes/List"
 import IntercomRoute from "./routes/Intercom"
+import IntertestRoute from "./routes/Intertest"
 import ModRoute from "./routes/Mod"
 
 export default class App extends React.Component <{}, AppContextState> {
@@ -66,6 +67,7 @@ export default class App extends React.Component <{}, AppContextState> {
                   <Route path=":modId" element={<ModRoute />} />
                 </Route>
                 <Route path="intercom" element={<IntercomRoute />} />
+                <Route path="intertest" element={<IntertestRoute />} />
                 <Route path="*" element={<Navigate replace to="/" />} />
               </Routes>
             </AppContext.Provider>

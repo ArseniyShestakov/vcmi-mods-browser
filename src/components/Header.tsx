@@ -29,6 +29,11 @@ export default class HeaderComponent extends React.Component <{}, {}> {
                                 <MenuItem as={Link} to="/intercom">Intercom test</MenuItem>
                             </GridItem>
                             </div>
+                            <div data-intercom-target='menu-intertest'>
+                            <GridItem w='100%' h='10' bg='orange.300'>
+                                <MenuItem as={Link} to="/intertest">Intercom auto</MenuItem>
+                            </GridItem>
+                            </div>
                             <div data-intercom-target='menu-wrong'>
                             <GridItem w='100%' h='10' bg='orange.300'>
                                 <MenuItem as={Link} to="/wronglink">Wrong link</MenuItem>
